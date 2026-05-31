@@ -1,0 +1,10 @@
+streamlit
+leafmap
+geopandas
+rioxarray
+xarray
+pystac-client
+planetary-computer
+plotly
+numpy
+pandas
