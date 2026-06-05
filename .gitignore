@@ -5,3 +5,7 @@ data/raw/*
 __pycache__/
 .venv/
 *.egg-info/
+
+notebooks/.ipynb_checkpoints/
+assets/precomputed/sundarbans_leafmap.html
+check_imports.py
