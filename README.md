@@ -2,6 +2,7 @@
 
 Interactive web app visualizing mangrove loss 1996–2020 for the Sundarbans (Bangladesh/India), including carbon impact estimates.
 
+
 **Live demo:** *(coming soon — Streamlit Community Cloud)*
 
 ---
