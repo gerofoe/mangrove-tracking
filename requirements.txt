@@ -8,3 +8,6 @@ planetary-computer
 plotly
 numpy
 pandas
+rasterio
+scikit-learn
+matplotlib
