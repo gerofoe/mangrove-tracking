@@ -73,6 +73,20 @@ streamlit run app.py
 
 ---
 
+## Notebook 03 — Multispectral ML
+
+`notebooks/03_sundarbans_Multispectral_STAC_ML.ipynb` extends the analysis from vector-based loss statistics to pixel-level classification. It queries the Microsoft Planetary Computer STAC API for a Sentinel-2 L2A scene over the Sundarbans bounding box, selects the scene with highest GMW polygon overlap (not just lowest cloud cover), and downloads four spectral bands (B02, B03, B04, B08) at 10 m native resolution.
+
+The classification pipeline resamples all bands to 20 m, computes NDVI as a fifth feature, burns GMW 2020 polygons into a pixel label mask via `rasterio.features.rasterize`, draws a balanced training sample of 50,000 pixels per class, and trains a Random Forest (50 trees, max depth 15, `class_weight="balanced"`) on the resulting feature matrix. Final accuracy on the held-out validation set is **92%** for both Mangrove and Non-Mangrove classes.
+
+Key limitations: training labels come from the GMW 2020 vector dataset, which has its own mapping uncertainty; the Sentinel-2 scene is from November 2020, so temporal generalization (other seasons, other years) is untested; no hyperparameter tuning was performed — this is a prototype. The 38% Mangrove pixel fraction in the selected tile (T45QYE) is unusually high because the tile was chosen for maximum GMW overlap, so class imbalance effects were minimal in this run.
+
+![Klassifikationskarte](assets/screenshots/03-s2_pred-map_2026-07-12.png)
+
+![GMW vs. Vorhersage](assets/screenshots/03-s2_gmw-vs-pred_2026-07-12.png)
+
+---
+
 ## Project structure
 
 ```
