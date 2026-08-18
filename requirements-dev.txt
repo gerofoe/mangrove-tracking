@@ -1,0 +1,14 @@
+-r requirements.txt
+
+# Notebooks + Datenaufbereitung (nicht fuer die deployte App noetig)
+geopandas
+rioxarray
+xarray
+rasterio
+pystac-client
+planetary-computer
+scikit-learn
+matplotlib
+leafmap
+numpy
+jupyterlab

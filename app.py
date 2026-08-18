@@ -37,7 +37,4 @@ st.metric("Marktwert", f"${data['market_value']:,.0f}")
 st.divider()
 st.subheader("Karte")
 
-with open("assets/precomputed/sundarbans_leafmap.html", "r", encoding="utf-8") as f:
-    html_content = f.read()
-
-st.components.v1.html(html_content, height=500)
+st.image("assets/precomputed/sundarbans_matplotlib.png", use_container_width=True)
